@@ -112,7 +112,7 @@ nmap gd <Action>(GotoDeclaration)
 nmap <leader>D <Action>(GotoTypeDeclaration)
 nmap gI <Action>(GotoImplementation)
 nmap gr <Action>(ShowUsages)
-nmap <leader>gt <Action>(GotoTest)
+nmap gT <Action>(GotoTest)
 nmap gb <Action>(Back)
 nmap gf <Action>(Forward)
 
