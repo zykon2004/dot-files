@@ -1,0 +1,130 @@
+set showmode
+set showcmd
+set smartcase
+set incsearch
+set visualbell
+set scrolloff=5
+set relativenumber
+
+" Use system clipboard
+set clipboard=unnamedplus
+set clipboard^=ideaput
+
+
+let mapleader = " "
+
+"" Plugin Settings
+"" ========================================================
+
+set surround
+set highlightedyank
+set nerdtree
+
+"" Key mappings
+"" ========================================================
+
+inoremap jj <Esc>
+
+" Move half a page and center
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+" have x (removes single character) not go into the default registry
+nnoremap x "_x
+" Make X an operator that removes without placing text in the default registry
+nmap X "_d
+nmap XX "_dd
+vmap X "_d
+vmap x "_d
+
+" don't yank to default register when changing something
+nnoremap c "xc
+xnoremap c "xc
+
+" Tab navigation
+nnoremap <A-n> :tabnext<CR>
+nnoremap <A-p> :tabprev<CR>
+
+" Pane navigation
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+nnoremap <C-k> <C-w>k
+nnoremap <C-j> <C-w>j
+
+" Easy visual indentation
+vnoremap < <gv
+vnoremap > >gv
+
+"" Leader commands
+"" ========================================================
+
+" Comment lines
+map <leader>c <action>(CommentByLineComment)
+
+" Jump around with easymotion
+" map <leader>j <Plug>(easymotion-s)
+
+" Open NERDTree (use q to exit)
+map <leader>x :NERDTreeToggle<CR>
+map <leader>v :NERDTreeFocus<CR>
+map <leader>n <Action>(ShowNavBar)
+
+" Folding
+map <leader>zc :action CollapseAllRegions<CR>
+map <leader>zo :action ExpandAllRegions<CR>
+
+" Window splits
+map <leader>wv <Action>(SplitVertically)
+map <leader>ws <Action>(SplitHorizontally)
+map <leader>wu <Action>(Unsplit)
+map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+
+" Display options
+map <leader>dz <action>(ToggleZenMode)
+
+" Actions (same as neovim kickstart)
+nnoremap ]d :action GotoNextError<CR>
+nnoremap [d :action GotoPreviousError<CR>
+map <leader>q <action>(ShowIntentionActions)
+map <leader>h <Action>(QuickJavaDoc)
+
+nmap = <Action>(ReformatCode)
+nmap + <Action>(OptimizeImports)
+
+" File navigation
+map <leader>ff <action>(GotoFile)
+map <leader>fr <action>(RecentFiles)
+map <leader>fc <action>(FindInPath)
+map <leader>fl <action>(RecentLocations)
+map <leader>fa <action>(GotoAction)
+
+" Refactoring
+map <leader>rn <Action>(RenameElement)
+map <leader>rm <Action>(ExtractMethod)
+map <leader>rv <Action>(IntroduceVariable)
+map <leader>rf <Action>(IntroduceField)
+map <leader>rs <Action>(ChangeSignature)
+map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>ys <Action>(SurroundWith)
+
+" Go to code
+nmap gd <Action>(GotoDeclaration)
+nmap <leader>D <Action>(GotoTypeDeclaration)
+nmap gI <Action>(GotoImplementation)
+nmap gr <Action>(ShowUsages)
+nmap <leader>gt <Action>(GotoTest)
+nmap gb <Action>(Back)
+nmap gf <Action>(Forward)
+
+" Breakpoint
+map <leader>bb <action>(ToggleLineBreakpoint)
+
+" Bookmarks
+nmap <leader>bm <Action>(ToggleBookmark)
+
+" run stuff
+map <leader>1 <Action>(Run)
+map <leader>! <Action>(ChooseRunConfiguration)
+map <leader>2 <Action>(Debug)
+map <leader>@ <Action>(ChooseDebugConfiguration)
+map <leader>0 <Action>(Stop)
