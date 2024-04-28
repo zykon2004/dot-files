@@ -5,6 +5,8 @@ set incsearch
 set visualbell
 set scrolloff=5
 set relativenumber
+set number
+set ideajoin
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -19,11 +21,22 @@ let mapleader = " "
 set surround
 set highlightedyank
 set nerdtree
+set easymotion
+set notimeout
 
 "" Key mappings
 "" ========================================================
 
 inoremap jj <Esc>
+
+" Jump around with easymotion
+" map <leader>j <Plug>(easymotion-s)
+" map <leader>l <Plug>(easymotion-bd-jk)
+" map <leader>J <Plug>(easymotion-jumptoanywhere)
+" map <leader>t <Plug>(easymotion-bd-t)
+nmap s         <Plug>(easymotion-s2)
+xmap s         <Plug>(easymotion-s2)
+omap z         <Plug>(easymotion-s2)
 
 " Move half a page and center
 nnoremap <C-d> <C-d>zz
@@ -40,6 +53,9 @@ vmap x "_d
 " don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
+
+"Change inside quotes
+nnoremap ciq ci"
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
