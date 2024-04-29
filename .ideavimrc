@@ -56,6 +56,13 @@ xnoremap c "xc
 
 "Change inside quotes
 nnoremap ciq ci"
+nnoremap viq vi"
+nnoremap diq di"
+
+" Quicker inside word edits
+nnoremap cw ciw
+nnoremap vw viw
+nnoremap dw diw
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
