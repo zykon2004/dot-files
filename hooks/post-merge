@@ -1,0 +1,3 @@
+#!/bin/sh
+ln -f ~/dot-files/.ideavimrc ~/.ideavimrc
+ln -f ~/dot-files/.tmux.conf ~/.tmux.conf
