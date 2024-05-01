@@ -8,8 +8,6 @@ set relativenumber
 set number
 set ideajoin
 
-
-
 " Use system clipboard
 set clipboard=unnamedplus
 set clipboard^=ideaput
