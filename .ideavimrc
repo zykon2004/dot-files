@@ -2,6 +2,7 @@ set showmode
 set showcmd
 set smartcase
 set incsearch
+set hlsearch
 set visualbell
 set scrolloff=5
 set relativenumber
@@ -28,6 +29,7 @@ set notimeout
 "" ========================================================
 
 inoremap jj <Esc>
+nmap <Esc> :noh <CR>
 
 " Jump around with easymotion
 " map <leader>j <Plug>(easymotion-s)
@@ -63,6 +65,9 @@ nnoremap diq di"
 nnoremap cw ciw
 nnoremap vw viw
 nnoremap dw diw
+
+" Delete word forward
+inoremap <C-e> <C-0>"_de
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
@@ -130,6 +135,8 @@ map <leader>rf <Action>(IntroduceField)
 map <leader>rs <Action>(ChangeSignature)
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>ys <Action>(SurroundWith)
+map <leader>lt <Action>(InsertLiveTemplate)
+map <leader>rp <Action>(Replace)
 
 " Go to code
 nmap gd <Action>(GotoDeclaration)
