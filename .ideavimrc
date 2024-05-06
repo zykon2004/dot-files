@@ -142,9 +142,9 @@ map <leader>rp <Action>(Replace)
 " Go to code
 nmap gd <Action>(GotoDeclaration)
 nmap <leader>D <Action>(GotoTypeDeclaration)
-nmap gI <Action>(GotoImplementation)
+nmap gi <Action>(GotoImplementation)
 nmap gu <Action>(ShowUsages)
-nmap gT <Action>(GotoTest)
+nmap gt <Action>(GotoTest)
 nmap gb <Action>(Back)
 nmap gf <Action>(Forward)
 
