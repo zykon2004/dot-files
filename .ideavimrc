@@ -61,6 +61,12 @@ nnoremap ciq ci"
 nnoremap viq vi"
 nnoremap diq di"
 
+" snake_case ops
+nnoremap ,w /_<CR> :noh<CR>
+nnoremap ,b ?_<CR>n :noh<CR>
+nnoremap ,cw T_ct_
+nnoremap ,dw T_"_df_
+
 " Delete word forward
 inoremap <C-e> <C-o>"_de
 
