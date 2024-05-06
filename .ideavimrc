@@ -61,13 +61,8 @@ nnoremap ciq ci"
 nnoremap viq vi"
 nnoremap diq di"
 
-" Quicker inside word edits
-nnoremap cw ciw
-nnoremap vw viw
-nnoremap dw diw
-
 " Delete word forward
-inoremap <C-e> <C-0>"_de
+inoremap <C-e> <C-o>"_de
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
