@@ -2,12 +2,11 @@ set showmode
 set showcmd
 set smartcase
 set incsearch
-set hlsearch
+set nohlsearch
 set visualbell
 set scrolloff=5
 set relativenumber
 set number
-set ideajoin
 
 " Use system clipboard
 set clipboard=unnamedplus
@@ -24,12 +23,12 @@ set highlightedyank
 set nerdtree
 set easymotion
 set notimeout
+set ideajoin
 
 "" Key mappings
 "" ========================================================
 
 inoremap jj <Esc>
-nmap <Esc> :noh <CR>
 
 " Jump around with easymotion
 " map <leader>j <Plug>(easymotion-s)
@@ -62,8 +61,8 @@ nnoremap viq vi"
 nnoremap diq di"
 
 " snake_case ops
-nnoremap ,w /_<CR> :noh<CR>
-nnoremap ,b ?_<CR>n :noh<CR>
+nnoremap ,w /_<CR>
+nnoremap ,b ?_<CR>
 nnoremap ,cw T_ct_
 nnoremap ,dw T_"_df_
 
