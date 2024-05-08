@@ -65,6 +65,8 @@ nnoremap ,w /_<CR>l
 nnoremap ,b ?_<CR>nl
 nnoremap ,cw T_ct_
 nnoremap ,dw T_"_df_
+nnoremap ,vw T_vt_
+nnoremap ,yw T_yt_
 
 " Delete word forward
 inoremap <C-e> <C-o>"_de
