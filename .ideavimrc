@@ -108,6 +108,7 @@ map <leader>wv <Action>(SplitVertically)
 map <leader>ws <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
+map <leader>t <C-W>w
 
 " Display options
 map <leader>dz <action>(ToggleZenMode)
