@@ -61,8 +61,8 @@ nnoremap viq vi"
 nnoremap diq di"
 
 " snake_case ops
-nnoremap ,w /_<CR>
-nnoremap ,b ?_<CR>
+nnoremap ,w /_<CR>l
+nnoremap ,b ?_<CR>nl
 nnoremap ,cw T_ct_
 nnoremap ,dw T_"_df_
 
@@ -113,7 +113,6 @@ map <leader>dz <action>(ToggleZenMode)
 " Actions (same as neovim kickstart)
 nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
-map <leader>q <action>(ShowIntentionActions)
 map <leader>h <Action>(QuickJavaDoc)
 
 nmap = <Action>(ReformatCode)
@@ -137,6 +136,7 @@ map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>ys <Action>(SurroundWith)
 map <leader>lt <Action>(InsertLiveTemplate)
 map <leader>rp <Action>(Replace)
+map <leader>G <Action>(Generate)
 
 " Go to code
 nmap gd <Action>(GotoDeclaration)
