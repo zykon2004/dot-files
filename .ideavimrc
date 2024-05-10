@@ -27,14 +27,10 @@ set ideajoin
 
 "" Key mappings
 "" ========================================================
-
+" sethandler <C-C> n-v:ide i:vim
 inoremap jj <Esc>
 
 " Jump around with easymotion
-" map <leader>j <Plug>(easymotion-s)
-" map <leader>l <Plug>(easymotion-bd-jk)
-" map <leader>J <Plug>(easymotion-jumptoanywhere)
-" map <leader>t <Plug>(easymotion-bd-t)
 nmap s         <Plug>(easymotion-s2)
 xmap s         <Plug>(easymotion-s2)
 omap z         <Plug>(easymotion-s2)
