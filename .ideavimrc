@@ -50,6 +50,14 @@ vmap x "_d
 " don't yank to default register when changing something
 nnoremap c "xc
 xnoremap c "xc
+nnoremap ci "xci
+vnoremap ci "xci
+onoremap ci "xci
+xnoremap ci "xci
+nnoremap ca "xca
+vnoremap ca "xca
+onoremap ca "xca
+xnoremap ca "xca
 
 "Change inside quotes
 nnoremap ciq ci"
@@ -60,12 +68,12 @@ nnoremap diq di"
 nnoremap ,w /_<CR>l
 nnoremap ,b ?_<CR>nl
 nnoremap ,cw T_ct_
-nnoremap ,dw T_"_df_
+nnoremap ,dw T_"xdf_
 nnoremap ,vw T_vt_
 nnoremap ,yw T_yt_
 
 " Delete word forward
-inoremap <C-e> <C-o>"_de
+inoremap <C-e> <C-o>"xde
 
 " Tab navigation
 nnoremap <A-n> :tabnext<CR>
@@ -150,7 +158,10 @@ nmap gf <Action>(Forward)
 map <leader>bb <action>(ToggleLineBreakpoint)
 
 " Bookmarks
-nmap <leader>bm <Action>(ToggleBookmark)
+map <leader>bm <Action>(ToggleBookmarkWithMnemonic)
+nmap ]b <Action>(GotoNextBookmark)
+nmap [b <Action>(GotoPreviousBookmark)
+
 
 " run stuff
 map <leader>1 <Action>(Run)
