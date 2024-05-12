@@ -36,6 +36,8 @@ xmap s         <Plug>(easymotion-s2)
 omap z         <Plug>(easymotion-s2)
 
 " Move half a page and center
+" nnoremap } }zz
+" nnoremap { {zz
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
@@ -89,14 +91,18 @@ nnoremap <C-j> <C-w>j
 vnoremap < <gv
 vnoremap > >gv
 
+" ide toggle
+sethandler <C-p> a:ide
+sethandler <C-e> n-v:ide i:vim
+sethandler <C-v> i:ide n-v:vim
+
 "" Leader commands
 "" ========================================================
 
-" Comment lines
-map <leader>c <action>(CommentByLineComment)
-
-" Jump around with easymotion
-" map <leader>j <Plug>(easymotion-s)
+" Code
+map <leader>cg <Action>(Generate)
+map <leader>cd <Action>(Unwrap)
+map <leader>ca <Action>(ShowIntentionActions)
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
@@ -143,7 +149,6 @@ map <leader>rr <Action>(Refactorings.QuickListPopupAction)
 map <leader>ys <Action>(SurroundWith)
 map <leader>lt <Action>(InsertLiveTemplate)
 map <leader>rp <Action>(Replace)
-map <leader>G <Action>(Generate)
 
 " Go to code
 nmap gd <Action>(GotoDeclaration)
