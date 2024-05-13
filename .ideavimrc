@@ -54,11 +54,9 @@ nnoremap c "xc
 xnoremap c "xc
 nnoremap ci "xci
 vnoremap ci "xci
-onoremap ci "xci
 xnoremap ci "xci
 nnoremap ca "xca
 vnoremap ca "xca
-onoremap ca "xca
 xnoremap ca "xca
 
 "Change inside quotes
