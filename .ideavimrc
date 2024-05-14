@@ -27,7 +27,6 @@ set ideajoin
 
 "" Key mappings
 "" ========================================================
-" sethandler <C-C> n-v:ide i:vim
 inoremap jj <Esc>
 
 " Jump around with easymotion
@@ -36,8 +35,6 @@ xmap s         <Plug>(easymotion-s2)
 omap z         <Plug>(easymotion-s2)
 
 " Move half a page and center
-" nnoremap } }zz
-" nnoremap { {zz
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
 
@@ -51,15 +48,16 @@ vmap x "_d
 
 " don't yank to default register when changing something
 nnoremap c "xc
+nnoremap cc "xcc
 xnoremap c "xc
 nnoremap ci "xci
-vnoremap ci "xci
-xnoremap ci "xci
+" vnoremap ci "xci
+" xnoremap ci "xci
 nnoremap ca "xca
-vnoremap ca "xca
-xnoremap ca "xca
-
-"Change inside quotes
+" vnoremap ca "xca
+" xnoremap ca "xca
+" 
+" "Change inside quotes
 nnoremap ciq ci"
 nnoremap viq vi"
 nnoremap diq di"
