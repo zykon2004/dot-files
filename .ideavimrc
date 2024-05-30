@@ -51,12 +51,8 @@ nnoremap c "xc
 nnoremap cc "xcc
 xnoremap c "xc
 nnoremap ci "xci
-" vnoremap ci "xci
-" xnoremap ci "xci
 nnoremap ca "xca
-" vnoremap ca "xca
-" xnoremap ca "xca
-" 
+
 " "Change inside quotes
 nnoremap ciq ci"
 nnoremap viq vi"
@@ -82,7 +78,7 @@ nnoremap <A-p> :tabprev<CR>
 " nnoremap <C-h> <C-w>h
 " nnoremap <C-l> <C-w>l
 " nnoremap <C-k> <C-w>k
-nnoremap <C-j> <C-w>w
+" nnoremap <C-j> <C-w>w
 
 " Easy visual indentation
 vnoremap < <gv
@@ -101,18 +97,20 @@ sethandler <C-v> i:ide n-v:vim
 map <leader>kk <Esc>O<Esc>j
 map <leader>jj <Esc>o<Esc>k
 
+
+map <leader>v <Action>(JumpToLastWindow)
+map <leader>n <Action>(ShowNavBar)
+
 " Code
 map <leader>cg <Action>(Generate)
 map <leader>cd <Action>(Unwrap)
 map <leader>ca <Action>(ShowIntentionActions)
+nmap \ <Action>(ShowIntentionActions)
 map <leader>cs <Action>(SurroundWith)
 map <leader>ct <Action>(InsertLiveTemplate)
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
-
-map <leader>v <Action>(JumpToLastWindow)
-map <leader>n <Action>(ShowNavBar)
 
 " Folding
 map <leader>zc :action CollapseAllRegions<CR>
@@ -123,7 +121,7 @@ map <leader>wv <Action>(SplitVertically)
 map <leader>ws <Action>(SplitHorizontally)
 map <leader>wu <Action>(Unsplit)
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
-" map <leader>t <C-W>w
+map <leader>t <C-W>w
 
 " Display options
 map <leader>dz <action>(ToggleZenMode)
@@ -131,8 +129,16 @@ map <leader>dz <action>(ToggleZenMode)
 " Actions (same as neovim kickstart)
 nnoremap ]d :action GotoNextError<CR>
 nnoremap [d :action GotoPreviousError<CR>
-map <leader>h <Action>(QuickJavaDoc)
 
+" Info
+map <leader>? <Action>(QuickJavaDoc)
+
+" Hierarchy
+map <leader>hc <Action><CallHierarchy>
+map <leader>hm <Action><MethodHierarchy>
+map <leader>ht <Action><TypeHierarchy>
+
+" Format
 nmap = <Action>(ReformatCode)
 nmap + <Action>(OptimizeImports)
 
