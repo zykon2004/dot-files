@@ -1,18 +1,17 @@
+
 set showmode
 set showcmd
 set smartcase
 set incsearch
-set nohlsearch
 set visualbell
 set scrolloff=5
 set relativenumber
 set number
+set nohlsearch
 
 " Use system clipboard
 set clipboard=unnamedplus
 set clipboard^=ideaput
-
-
 let mapleader = " "
 
 "" Plugin Settings
@@ -24,10 +23,21 @@ set nerdtree
 set easymotion
 set notimeout
 set ideajoin
+set which-key
+
+"" Which-key
+let g:WhichKey_FontSize = 15
+let g:WhichKey_CommandColor = "#41ead4"
+let g:WhichKey_PrefixColor = "#f335b2"
+let g:WhichKey_SortOrder = "by_key_prefix_first"
+let g:WhichKey_DefaultDelay = 750
 
 "" Key mappings
 "" ========================================================
+
 inoremap jj <Esc>
+
+nmap U <Action>(Vcs.RollbackChangedLines)
 
 " Jump around with easymotion
 nmap s         <Plug>(easymotion-s2)
@@ -48,14 +58,13 @@ vmap x "_d
 
 " don't yank to default register when changing something
 nnoremap c "xc
-nnoremap cc "xcc
 xnoremap c "xc
+nnoremap cc "xcc
 nnoremap ci "xci
 nnoremap ca "xca
 
-" "Change inside quotes
+"Change inside quotes
 nnoremap ciq ci"
-nnoremap viq vi"
 nnoremap diq di"
 
 " snake_case ops
@@ -66,7 +75,7 @@ nnoremap ,dw T_"xdf_
 nnoremap ,vw T_vt_
 nnoremap ,yw T_yt_
 
-" Delete word forward
+" Delete word forward, complementary to <C-w>
 inoremap <C-e> <C-o>"xde
 
 " Tab navigation
@@ -74,19 +83,21 @@ nnoremap <A-n> :tabnext<CR>
 nnoremap <A-p> :tabprev<CR>
 
 " Pane navigation
-
 " nnoremap <C-h> <C-w>h
 " nnoremap <C-l> <C-w>l
 " nnoremap <C-k> <C-w>k
-" nnoremap <C-j> <C-w>w
+" nnoremap <C-j> <C-w>j
+nnoremap <C-j> <C-w>w
 
 " Easy visual indentation
 vnoremap < <gv
 vnoremap > >gv
 
-" ide toggle
+" IDE Handler
 sethandler <C-p> a:ide
 sethandler <C-s> a:ide
+sethandler <C-h> a:ide
+sethandler <C-j> a:vim
 sethandler <C-e> n-v:ide i:vim
 sethandler <C-v> i:ide n-v:vim
 
@@ -95,75 +106,117 @@ sethandler <C-v> i:ide n-v:vim
 
 " Spacers
 map <leader>kk <Esc>O<Esc>j
+let g:WhichKeyDesc_k = "<leader>k"
 map <leader>jj <Esc>o<Esc>k
-
-
-map <leader>v <Action>(JumpToLastWindow)
-map <leader>n <Action>(ShowNavBar)
-
-" Code
-map <leader>cg <Action>(Generate)
-map <leader>cd <Action>(Unwrap)
-map <leader>ca <Action>(ShowIntentionActions)
-nmap \ <Action>(ShowIntentionActions)
-map <leader>cs <Action>(SurroundWith)
-map <leader>ct <Action>(InsertLiveTemplate)
+let g:WhichKeyDesc_j = "<leader>j"
 
 " Open NERDTree (use q to exit)
 map <leader>x :NERDTreeToggle<CR>
+let g:WhichKeyDesc_nerdtree_action = "<leader>x"
 
-" Folding
-map <leader>zc :action CollapseAllRegions<CR>
-map <leader>zo :action ExpandAllRegions<CR>
+map <leader>v <Action>(JumpToLastWindow)
+let g:WhichKeyDesc_jump_last_action = "<leader>v"
+map <leader>n <Action>(ShowNavBar)
+let g:WhichKeyDesc_navbar_action = "<leader>n"
+
+" Code
+let g:WhichKeyDesc_code_prefix = "<leader>c [C]ode"
+map <leader>cg <Action>(Generate)
+let g:WhichKeyDesc_code_generate = "<leader>cg [C]ode [G]enerate"
+map <leader>cu <Action>(Unwrap)
+let g:WhichKeyDesc_code_unwrap = "<leader>cu [U]nwrap"
+map <leader>ca <Action>(ShowIntentionActions)
+let g:WhichKeyDesc_code_action = "<leader>ca [C]ode [A]ction"
+nmap \ <Action>(ShowIntentionActions)
+map <leader>cs <Action>(SurroundWith)
+let g:WhichKeyDesc_code_surround = "<leader>cs [S]urround With"
+map <leader>ct <Action>(InsertLiveTemplate)
+let g:WhichKeyDesc_code_template = "<leader>ct Live [T]emplate"
 
 " Window splits
+let g:WhichKeyDesc_window = "<leader>w [W]indow splits"
 map <leader>wv <Action>(SplitVertically)
-map <leader>ws <Action>(SplitHorizontally)
+let g:WhichKeyDesc_window_split_vertically = "<leader>wv Split [V]ertically"
+map <leader>wh <Action>(SplitHorizontally)
+let g:WhichKeyDesc_window_split_horizontally = "<leader>wh Split [H]orizontally"
 map <leader>wu <Action>(Unsplit)
+let g:WhichKeyDesc_window_split_unsplit = "<leader>wu [U]nsplit"
 map <leader>wm <Action>(MoveEditorToOppositeTabGroup)
-map <leader>t <C-W>w
+let g:WhichKeyDesc_window_split_move_editor = "<leader>wm [M]ove editor to opposite tab group"
+map <leader>t <C-w>w
+let g:WhichKeyDesc_window_tab_toggle = "<leader>t"
 
 " Display options
+let g:WhichKeyDesc_display = "<leader>d [D]isplay"
 map <leader>dz <action>(ToggleZenMode)
+let g:WhichKeyDesc_zen_mode = "<leader>dz Toggle [Z]en mode"
+map <leader>dd <action>(ToggleDistractionFreeMode)
+let g:WhichKeyDesc_distraction_free_mode = "<leader>dd Toggle [D]istraction Free mode"
+map <leader>df <action>(ToggleFullScreen)
+let g:WhichKeyDesc_fullscreen_mode = "<leader>df Toggle [F]ull Screen mode"
 
 " Actions (same as neovim kickstart)
 nnoremap ]d :action GotoNextError<CR>
+let g:WhichKeyDesc_goto_next_error = "]d Go to next [D]iagnostic message"
 nnoremap [d :action GotoPreviousError<CR>
+let g:WhichKeyDesc_goto_previous_error = "[d Go to previous [D]iagnostic message"
 
 " Info
 map <leader>? <Action>(QuickJavaDoc)
+let g:WhichKeyDesc_help_doc = "<leader>? Show Documentation"
 
 " Hierarchy
-map <leader>hc <Action><CallHierarchy>
-map <leader>hm <Action><MethodHierarchy>
-map <leader>ht <Action><TypeHierarchy>
+let g:WhichKeyDesc_hierarchy = "<leader>h [H]ierarchy"
+map <leader>hc <Action>(CallHierarchy)  
+let g:WhichKeyDesc_hierarchy_call = "<leader>hc [C]all Hierarchy"
+map <leader>hm <Action>(MethodHierarchy)
+let g:WhichKeyDesc_hierarchy_method = "<leader>hm [M]ethod Hierarchy"
+map <leader>ht <Action>(TypeHierarchy)                                    
+let g:WhichKeyDesc_hierarchy_type = "<leader>ht [T]ype Hierarchy"
 
 " Format
 nmap = <Action>(ReformatCode)
 nmap + <Action>(OptimizeImports)
 
 " File navigation
+let g:WhichKeyDesc_find = "<leader>f [F]ind"
 map <leader>ff <action>(GotoFile)
+let g:WhichKeyDesc_find_file = "<leader>ff [F]ind [F]ile"
 map <leader>fr <action>(RecentFiles)
-map <leader>fc <action>(FindInPath)
-map <leader>fl <action>(RecentLocations)
-map <leader>fa <action>(GotoAction)
+let g:WhichKeyDesc_find_recent = "<leader>fr [F]ind [R]ecent Files/Menus"
 map <leader>fu <Action>(FindUsages)
+let g:WhichKeyDesc_find_usages = "<leader>fu [F]ind [U]sages"
+map <leader>fc <action>(FindInPath)
+let g:WhichKeyDesc_find_containing = "<leader>fc [F]ind File [C]ontaining"
+map <leader>fl <action>(RecentLocations)
+let g:WhichKeyDesc_find_locations = "<leader>fl [F]ind Recent [L]ocations"
+map <leader>fa <action>(GotoAction)
+let g:WhichKeyDesc_find_action = "<leader>fa [F]ind [A]ction"
 
 " Refactoring
-map <leader>rn <Action>(RenameElement)
-map <leader>rm <Action>(ExtractMethod)
-map <leader>rv <Action>(IntroduceVariable)
-map <leader>rf <Action>(IntroduceField)
-map <leader>rs <Action>(ChangeSignature)
+let g:WhichKeyDesc_refactor = "<leader>r [R]efactor"
 map <leader>rr <Action>(Refactorings.QuickListPopupAction)
-map <leader>ys <Action>(SurroundWith)
-map <leader>lt <Action>(InsertLiveTemplate)
-map <leader>rp <Action>(Replace)
+let g:WhichKeyDesc_refactor_menu = "<leader>rr [R]efactor Menu"
+map <leader>rn <Action>(RenameElement)
+let g:WhichKeyDesc_refactor_rename = "<leader>rn [R]e[N]ame"
+map <leader>rm <Action>(ExtractMethod)
+let g:WhichKeyDesc_refactor_method = "<leader>rm Extract [M]ethod"
+map <leader>rv <Action>(IntroduceVariable)
+let g:WhichKeyDesc_refactor_variable = "<leader>rv Introduce [V]ariable"
+map <leader>rf <Action>(IntroduceField)
+let g:WhichKeyDesc_refactor_field = "<leader>rf Introduce [F]ield (Class)"
+map <leader>rc <Action>(IntroduceConstant)
+let g:WhichKeyDesc_refactor_constant = "<leader>rc Introduce [C]onstant"
+map <leader>rp <Action>(IntroduceParameter)
+let g:WhichKeyDesc_refactor_parameter = "<leader>rp Introduce [P]arameter (Function)"
+map <leader>rs <Action>(ChangeSignature)
+let g:WhichKeyDesc_refactor_signature = "<leader>rs Change [S]ignature"
+map <leader>rP <Action>(Replace)
+let g:WhichKeyDesc_replace = "<leader>rP [R]e[P]lace"
 
 " Go to code
 nmap gd <Action>(GotoDeclaration)
-nmap <leader>D <Action>(GotoTypeDeclaration)
+nmap gD <Action>(GotoTypeDeclaration)
 nmap gi <Action>(GotoImplementation)
 nmap gu <Action>(ShowUsages)
 nmap gt <Action>(GotoTest)
@@ -171,6 +224,7 @@ nmap gb <Action>(Back)
 nmap gf <Action>(Forward)
 
 " Breakpoint
+let g:WhichKeyDesc_b = "<leader>b"
 map <leader>bb <action>(ToggleLineBreakpoint)
 
 " Bookmarks
@@ -178,10 +232,23 @@ map <leader>bm <Action>(ToggleBookmarkWithMnemonic)
 nmap ]b <Action>(GotoNextBookmark)
 nmap [b <Action>(GotoPreviousBookmark)
 
-
 " run stuff
+map <leader>` <Action>(Console.Jdbc.Execute)
+let g:WhichKeyDesc_execute_query_action = "<leader>`"
 map <leader>1 <Action>(Run)
+let g:WhichKeyDesc_run_action = "<leader>1"
 map <leader>! <Action>(ChooseRunConfiguration)
+let g:WhichKeyDesc_choose_run_action = "<leader>!"
 map <leader>2 <Action>(Debug)
+let g:WhichKeyDesc_debug_action = "<leader>2"
 map <leader>@ <Action>(ChooseDebugConfiguration)
+let g:WhichKeyDesc_choose_debug_action = "<leader>@"
+map <leader>3 <Action>(SmartStepInto)
+let g:WhichKeyDesc_step_into_my_code_action = "<leader>3"
+map <leader>5 <Action>(Resume)
+let g:WhichKeyDesc_resume_debugging_action = "<leader>5"
+
 map <leader>0 <Action>(Stop)
+let g:WhichKeyDesc_choose_stop_action = "<leader>0"
+
+
