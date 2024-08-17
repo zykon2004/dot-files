@@ -128,6 +128,7 @@ let g:WhichKeyDesc_code_unwrap = "<leader>cu [U]nwrap"
 map <leader>ca <Action>(ShowIntentionActions)
 let g:WhichKeyDesc_code_action = "<leader>ca [C]ode [A]ction"
 nmap \ <Action>(ShowIntentionActions)
+nmap - <Action>(EditorCompleteStatement)
 map <leader>cs <Action>(SurroundWith)
 let g:WhichKeyDesc_code_surround = "<leader>cs [S]urround With"
 map <leader>ct <Action>(InsertLiveTemplate)
