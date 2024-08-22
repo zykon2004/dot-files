@@ -24,6 +24,7 @@ set easymotion
 set notimeout
 set ideajoin
 set which-key
+set oldundo
 
 "" Which-key
 let g:WhichKey_FontSize = 15
@@ -128,7 +129,7 @@ let g:WhichKeyDesc_code_unwrap = "<leader>cu [U]nwrap"
 map <leader>ca <Action>(ShowIntentionActions)
 let g:WhichKeyDesc_code_action = "<leader>ca [C]ode [A]ction"
 nmap \ <Action>(ShowIntentionActions)
-nmap - <Action>(EditorCompleteStatement)
+nmap - <Action>(EditorCompleteStatement)o
 map <leader>cs <Action>(SurroundWith)
 let g:WhichKeyDesc_code_surround = "<leader>cs [S]urround With"
 map <leader>ct <Action>(InsertLiveTemplate)
