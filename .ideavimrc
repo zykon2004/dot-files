@@ -98,6 +98,7 @@ vnoremap > >gv
 sethandler <C-p> a:ide
 sethandler <C-s> a:ide
 sethandler <C-h> a:ide
+sethandler <C-k> a:ide
 sethandler <C-j> a:vim
 sethandler <C-e> n-v:ide i:vim
 sethandler <C-v> i:ide n-v:vim
@@ -177,8 +178,7 @@ map <leader>ht <Action>(TypeHierarchy)
 let g:WhichKeyDesc_hierarchy_type = "<leader>ht [T]ype Hierarchy"
 
 " Format
-nmap = <Action>(ReformatCode)
-nmap + <Action>(OptimizeImports)
+nmap = <Action>(SaveDocument)
 
 " File navigation
 let g:WhichKeyDesc_find = "<leader>f [F]ind"
