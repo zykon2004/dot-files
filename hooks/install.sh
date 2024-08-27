@@ -1,7 +1,7 @@
 echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
-sudo apt install tmux zsh make gcc ripgrep unzip git neovim build-essential fd-find fzf guake pipx curl libfuse2
+sudo apt install tmux zsh make gcc ripgrep unzip git neovim build-essential fd-find fzf guake pipx curl 
 curl -sS https://starship.rs/install.sh | sh
 
 # oh-my-zsh
@@ -34,8 +34,8 @@ tksv
 # Run TPM
 
 # IDEs
-# https://www.jetbrains.com/toolbox-app/download/download-thanks.html?platform=linux
-sudo tar -xzf ~/Downloads/jetbrains-toolbox-*.tar.gz -C /opt
+sudo snap install rustrover  --classic
+sudo snap install pycharm-community  --classic
 
 git config --global user.name "Robert"
 git config --global user.email "zykon@pm.me"
