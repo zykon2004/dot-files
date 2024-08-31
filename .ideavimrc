@@ -64,6 +64,9 @@ nnoremap cc "xcc
 nnoremap ci "xci
 nnoremap ca "xca
 
+" don't yank to default register when pasting over something in visual mode
+xnoremap p P
+
 "Change inside quotes
 nnoremap ciq ci"
 nnoremap diq di"
@@ -252,5 +255,3 @@ let g:WhichKeyDesc_resume_debugging_action = "<leader>5"
 
 map <leader>0 <Action>(Stop)
 let g:WhichKeyDesc_choose_stop_action = "<leader>0"
-
-
