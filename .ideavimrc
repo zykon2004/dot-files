@@ -181,7 +181,7 @@ map <leader>ht <Action>(TypeHierarchy)
 let g:WhichKeyDesc_hierarchy_type = "<leader>ht [T]ype Hierarchy"
 
 " Format
-map <leader>f <action>(ReformatCode)
+nmap <leader>f <Action>(Tool_External Tools_ruff-all)
 
 " File navigation
 let g:WhichKeyDesc_find = "<leader>s [S]earch"
@@ -225,8 +225,12 @@ nmap gD <Action>(GotoTypeDeclaration)
 nmap gi <Action>(GotoImplementation)
 nmap gu <Action>(ShowUsages)
 nmap gt <Action>(GotoTest)
+nmap <C-O> <Action>(Back)
 nmap gb <Action>(Back)
+nmap <C-I> <Action>(Forward)
 nmap gf <Action>(Forward)
+nmap g; <Action>(JumpToLastChange)
+nmap g, <Action>(JumpToNextChange)
 
 " Breakpoint
 let g:WhichKeyDesc_b = "<leader>b"
