@@ -181,22 +181,22 @@ map <leader>ht <Action>(TypeHierarchy)
 let g:WhichKeyDesc_hierarchy_type = "<leader>ht [T]ype Hierarchy"
 
 " Format
-nmap = <Action>(SaveDocument)
+map <leader>f <action>(ReformatCode)
 
 " File navigation
-let g:WhichKeyDesc_find = "<leader>f [F]ind"
-map <leader>ff <action>(GotoFile)
-let g:WhichKeyDesc_find_file = "<leader>ff [F]ind [F]ile"
-map <leader>fr <action>(RecentFiles)
-let g:WhichKeyDesc_find_recent = "<leader>fr [F]ind [R]ecent Files/Menus"
-map <leader>fu <Action>(FindUsages)
-let g:WhichKeyDesc_find_usages = "<leader>fu [F]ind [U]sages"
-map <leader>fc <action>(FindInPath)
-let g:WhichKeyDesc_find_containing = "<leader>fc [F]ind File [C]ontaining"
-map <leader>fl <action>(RecentLocations)
-let g:WhichKeyDesc_find_locations = "<leader>fl [F]ind Recent [L]ocations"
-map <leader>fa <action>(GotoAction)
-let g:WhichKeyDesc_find_action = "<leader>fa [F]ind [A]ction"
+let g:WhichKeyDesc_find = "<leader>s [S]earch"
+map <leader>sf <action>(GotoFile)
+let g:WhichKeyDesc_find_file = "<leader>sf [S]earch [F]iles"
+map <leader>s. <action>(RecentFiles)
+let g:WhichKeyDesc_find_recent = "<leader>s. [S]earch Recent Files ('.' for repeat)"
+map <leader>su <Action>(FindUsages)
+let g:WhichKeyDesc_find_usages = "<leader>su [S]earch [U]sages"
+map <leader>sg <action>(FindInPath)
+let g:WhichKeyDesc_find_containing = "<leader>sg [S]earch by [G]rep"
+map <leader>sl <action>(RecentLocations)
+let g:WhichKeyDesc_find_locations = "<leader>sl [S]earch  Recent [L]ocations"
+map <leader>sa <action>(GotoAction)
+let g:WhichKeyDesc_find_action = "<leader>sa [S]earch  [A]ction"
 
 " Refactoring
 let g:WhichKeyDesc_refactor = "<leader>r [R]efactor"

@@ -1,7 +1,7 @@
 echo "$USER ALL=(ALL:ALL) NOPASSWD: ALL" | sudo tee /etc/sudoers.d/$USER
 sudo add-apt-repository ppa:neovim-ppa/unstable -y
 sudo apt update
-sudo apt install tmux zsh make gcc ripgrep unzip git neovim build-essential fd-find fzf guake pipx curl 
+sudo apt install tmux zsh make gcc ripgrep unzip git neovim build-essential fd-find fzf guake pipx curl xsel
 curl -sS https://starship.rs/install.sh | sh
 
 # oh-my-zsh
