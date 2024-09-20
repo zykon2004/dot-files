@@ -20,7 +20,7 @@ let mapleader = " "
 set surround
 set highlightedyank
 set nerdtree
-set easymotion
+" set easymotion
 set notimeout
 set ideajoin
 set which-key
@@ -41,9 +41,9 @@ inoremap jj <Esc>
 nmap U <Action>(Vcs.RollbackChangedLines)
 
 " Jump around with easymotion
-nmap s         <Plug>(easymotion-s2)
-xmap s         <Plug>(easymotion-s2)
-omap z         <Plug>(easymotion-s2)
+" nmap s         <Plug>(easymotion-s2)
+" xmap s         <Plug>(easymotion-s2)
+" omap z         <Plug>(easymotion-s2)
 
 " Move half a page and center
 nnoremap <C-d> <C-d>zz
@@ -182,6 +182,7 @@ let g:WhichKeyDesc_hierarchy_type = "<leader>ht [T]ype Hierarchy"
 
 " Format
 nmap <leader>f <Action>(Tool_External Tools_ruff-all)
+let g:WhichKeyDesc_format_with_ruff = "<leader>f [F]ormat & Lint"
 
 " File navigation
 let g:WhichKeyDesc_find = "<leader>s [S]earch"
