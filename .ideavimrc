@@ -65,7 +65,7 @@ nnoremap ci "xci
 nnoremap ca "xca
 
 " don't yank to default register when pasting over something in visual mode
-xnoremap p P
+" xnoremap p P
 
 "Change inside quotes
 nnoremap ciq ci"
@@ -188,6 +188,8 @@ let g:WhichKeyDesc_format_with_ruff = "<leader>f [F]ormat & Lint"
 let g:WhichKeyDesc_find = "<leader>s [S]earch"
 map <leader>sf <action>(GotoFile)
 let g:WhichKeyDesc_find_file = "<leader>sf [S]earch [F]iles"
+map <leader>sw viw<Action>(FindInPath)
+let g:WhichKeyDesc_find_word = "<leader>sw [S]earch Word"
 map <leader>s. <action>(RecentFiles)
 let g:WhichKeyDesc_find_recent = "<leader>s. [S]earch Recent Files ('.' for repeat)"
 map <leader>su <Action>(FindUsages)
