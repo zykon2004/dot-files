@@ -204,7 +204,7 @@ let g:WhichKeyDesc_find_action = "<leader>sa [S]earch  [A]ction"
 
 " Refactoring
 let g:WhichKeyDesc_refactor = "<leader>r [R]efactor"
-map <leader>rr <Action>(Refactorings.QuickListPopupAction)
+map <leader>rr <Action>(RefactoringMenu)
 let g:WhichKeyDesc_refactor_menu = "<leader>rr [R]efactor Menu"
 map <leader>rn <Action>(RenameElement)
 let g:WhichKeyDesc_refactor_rename = "<leader>rn [R]e[N]ame"
