@@ -1,4 +1,3 @@
-
 set showmode
 set showcmd
 set smartcase
@@ -26,7 +25,11 @@ set ideajoin
 set which-key
 set nooldundo
 set commentary
+<<<<<<< Updated upstream
 set quickscope 
+=======
+set quickscope
+>>>>>>> Stashed changes
 
 "" Which-key
 let g:WhichKey_FontSize = 15
@@ -48,7 +51,8 @@ let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " nmap s         <Plug>(easymotion-s2)
 " xmap s         <Plug>(easymotion-s2)
 " omap z         <Plug>(easymotion-s2)
-
+" Quick Scope
+let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Move half a page and center
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
