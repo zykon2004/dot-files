@@ -2,3 +2,5 @@
 ln -f ~/dot-files/.ideavimrc ~/.ideavimrc
 ln -f ~/dot-files/.tmux.conf ~/.tmux.conf
 ln -f ~/dot-files/.ruff.toml ~/.ruff.toml
+ln -f ~/dot-files/zed_keymap.json ~/.config/zed/keymap.json
+ln -f ~/dot-files/zed_settings.json ~/.config/zed/settings.json
