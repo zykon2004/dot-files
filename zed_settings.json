@@ -21,7 +21,7 @@
   },
   "collaboration_panel": {
     // Whether to show the collaboration panel button in the status bar.
-    "button": false,
+    "button": false
   },
   "tab_bar": {
     // Whether or not to show the tab bar in the editor
@@ -82,6 +82,39 @@
   "git": {
     "inline_blame": {
       "enabled": false
+    }
+  },
+  "lsp": {
+    "ruff": {
+      "initialization_options": {
+        "settings": {
+          // Ruff server settings goes here
+          "target-version": "py312",
+          "lineLength": 90,
+          "lint": {
+            "extendSelect": ["I", "UP", "F", "RUF", "PL"]
+          }
+        }
+      }
+    }
+  },
+  "languages": {
+    "Python": {
+      "language_servers": ["ruff"],
+      "format_on_save": "on",
+      "formatter": [
+        {
+          "code_actions": {
+            "source.organizeImports.ruff": true,
+            "source.fixAll.ruff": true
+          }
+        },
+        {
+          "language_server": {
+            "name": "ruff"
+          }
+        }
+      ]
     }
   }
 }
