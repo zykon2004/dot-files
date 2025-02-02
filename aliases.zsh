@@ -1,0 +1,10 @@
+alias -g G="| grep"
+alias -g L="| less"
+alias c="clear"
+alias vi="nvim"
+alias v="nvim"
+alias d="sudo docker"
+alias l-"ls -ltrah"
+alias t="uv run pytest"
+alias p="pre-commit run -a"
+

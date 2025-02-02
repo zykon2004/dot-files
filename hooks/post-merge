@@ -4,4 +4,4 @@ ln -f ~/dot-files/.tmux.conf ~/.tmux.conf
 ln -f ~/dot-files/.ruff.toml ~/.ruff.toml
 ln -f ~/dot-files/zed_keymap.json ~/.config/zed/keymap.json
 ln -f ~/dot-files/zed_settings.json ~/.config/zed/settings.json
-ln -f ~/dot-files/.aliases ~/.aliases
+ln -f ~/dot-files/aliases.zsh ~/.oh-my-zsh/custom/aliases.zsh

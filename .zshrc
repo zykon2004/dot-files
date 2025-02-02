@@ -122,8 +122,6 @@ export GOOGLE_AI_API_KEY="AIzaSyBuGiHsrFSCBfyveVQppbjbiXpZFJ_50Sg"
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
-export ~/.aliases
-
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
