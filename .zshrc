@@ -122,14 +122,7 @@ export GOOGLE_AI_API_KEY="AIzaSyBuGiHsrFSCBfyveVQppbjbiXpZFJ_50Sg"
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
-alias -g G="| grep"
-alias -g L="| less"
-alias c="clear"
-alias vi="nvim"
-alias v="nvim"
-alias d="sudo docker"
-alias l-"ls -ltrah"
-alias t="uv run pytest"
+export ~/.aliases
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
