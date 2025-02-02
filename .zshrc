@@ -129,6 +129,7 @@ alias vi="nvim"
 alias v="nvim"
 alias d="sudo docker"
 alias l-"ls -ltrah"
+alias t="uv run pytest"
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
