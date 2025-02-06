@@ -19,17 +19,13 @@ let mapleader = " "
 set surround
 set highlightedyank
 " set nerdtree
-" set easymotion
+set easymotion
 set notimeout
 set ideajoin
 set which-key
 set nooldundo
 set commentary
-<<<<<<< Updated upstream
-set quickscope 
-=======
-set quickscope
->>>>>>> Stashed changes
+" set quickscope
 
 "" Which-key
 let g:WhichKey_FontSize = 15
@@ -45,14 +41,15 @@ inoremap jj <Esc>
 
 nmap U <Action>(Vcs.RollbackChangedLines)
 
-" Quick Scope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Jump around with easymotion
-" nmap s         <Plug>(easymotion-s2)
-" xmap s         <Plug>(easymotion-s2)
-" omap z         <Plug>(easymotion-s2)
+nmap s         <Plug>(easymotion-s2)
+xmap s         <Plug>(easymotion-s2)
+omap z         <Plug>(easymotion-s2)
+
 " Quick Scope
-let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
+" Quick Scope
+" let g:qs_highlight_on_keys = ['f', 'F', 't', 'T']
 " Move half a page and center
 nnoremap <C-d> <C-d>zz
 nnoremap <C-u> <C-u>zz
@@ -267,6 +264,7 @@ map <leader>3 <Action>(SmartStepInto)
 let g:WhichKeyDesc_step_into_my_code_action = "<leader>3"
 map <leader>5 <Action>(Resume)
 let g:WhichKeyDesc_resume_debugging_action = "<leader>5"
-
+map <leader>7 <Action>(RunClass)
+let g:WhichKeyDesc_run_current_file_action = "<leader>7"
 map <leader>0 <Action>(Stop)
 let g:WhichKeyDesc_choose_stop_action = "<leader>0"
