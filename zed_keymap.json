@@ -35,7 +35,9 @@
     "bindings": {
       "alt-q": "editor::ToggleCodeActions",
       "ctrl-d": "vim::ScrollDown",
-      "ctrl-u": "vim::ScrollUp"
+      "ctrl-u": "vim::ScrollUp",
+      "alt-n": "pane::ActivateNextItem",
+      "alt-p": "pane::ActivatePrevItem"
       // "j k": ["workspace::SendKeystrokes", "escape"]
     }
   },
