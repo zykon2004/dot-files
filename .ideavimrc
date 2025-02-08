@@ -239,6 +239,7 @@ nmap <C-I> <Action>(Forward)
 nmap gf <Action>(Forward)
 nmap g; <Action>(JumpToLastChange)
 nmap g, <Action>(JumpToNextChange)
+nmap ga <Action>(SelectAllOccurrences)
 
 " Breakpoint
 let g:WhichKeyDesc_b = "<leader>b"
