@@ -9,13 +9,19 @@
   {
     "context": "vim_mode == normal",
     "bindings": {
-      "\\":  "editor::ToggleCodeActions"
+      "\\": "editor::ToggleCodeActions"
     }
   },
   {
     "context": "vim_mode == insert",
     "bindings": {
       "j j": "vim::NormalBefore" // remap jj in insert mode to escape.
+    }
+  },
+  {
+    "context": "vim_operator == a || vim_operator == i || vim_operator == cs",
+    "bindings": {
+      "b": "vim::AnyBrackets"
     }
   },
   {
