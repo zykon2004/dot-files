@@ -167,6 +167,9 @@ map <leader>df <action>(ToggleFullScreen)
 let g:WhichKeyDesc_fullscreen_mode = "<leader>df Toggle [F]ull Screen mode"
 map <leader>dp <action>(TogglePowerSave)
 let g:WhichKeyDesc_power_saver_mode = "<leader>dp Toggle [P]ower saver mode"
+map <leader>dl <action>(EditorToggleShowLineNumbers)
+let g:WhichKeyDesc_no_line_numbers_mode = "<leader>dl Toggle [L]ine numbers"
+
 
 " Actions (same as neovim kickstart)
 nnoremap ]d :action GotoNextError<CR>
