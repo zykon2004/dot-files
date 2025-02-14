@@ -165,6 +165,8 @@ map <leader>dd <action>(ToggleDistractionFreeMode)
 let g:WhichKeyDesc_distraction_free_mode = "<leader>dd Toggle [D]istraction Free mode"
 map <leader>df <action>(ToggleFullScreen)
 let g:WhichKeyDesc_fullscreen_mode = "<leader>df Toggle [F]ull Screen mode"
+map <leader>dp <action>(TogglePowerSave)
+let g:WhichKeyDesc_power_saver_mode = "<leader>dp Toggle [P]ower saver mode"
 
 " Actions (same as neovim kickstart)
 nnoremap ]d :action GotoNextError<CR>
@@ -263,6 +265,8 @@ map <leader>@ <Action>(ChooseDebugConfiguration)
 let g:WhichKeyDesc_choose_debug_action = "<leader>@"
 map <leader>3 <Action>(SmartStepInto)
 let g:WhichKeyDesc_step_into_my_code_action = "<leader>3"
+map <leader>4 <Action>(EvaluateExpression)
+let g:WhichKeyDesc_evaluate_expression_action = "<leader>4"
 map <leader>5 <Action>(Resume)
 let g:WhichKeyDesc_resume_debugging_action = "<leader>5"
 map <leader>7 <Action>(RunClass)
